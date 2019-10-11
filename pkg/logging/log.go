@@ -14,9 +14,12 @@ import (
 type Level int
 
 var (
+	// F 日志写入文件
 	F *os.File
 
-	DefaultPrefix     = ""
+	// DefaultPrefix   默认前缀
+	DefaultPrefix = ""
+	// DefaultCallDepath 默认调用深度
 	DefaultCallDepath = 2
 
 	logger     *log.Logger
