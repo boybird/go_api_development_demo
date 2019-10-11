@@ -4,6 +4,7 @@ import (
 	"github.com/boybird/hello/pkg/models"
 	"github.com/boybird/hello/pkg/setting"
 	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 func main() {

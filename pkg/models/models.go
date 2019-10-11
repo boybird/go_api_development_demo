@@ -7,7 +7,6 @@ import (
 
 	"github.com/boybird/hello/pkg/setting"
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 var db *gorm.DB
