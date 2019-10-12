@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/boybird/hello/pkg/gredis"
 	"github.com/boybird/hello/pkg/logging"
 	"github.com/boybird/hello/pkg/models"
 	"github.com/boybird/hello/pkg/setting"
@@ -12,5 +13,6 @@ func main() {
 	setting.Setup()
 	models.Setup()
 	logging.Setup()
+	gredis.Setup()
 
 }
