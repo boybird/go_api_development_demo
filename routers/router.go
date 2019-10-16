@@ -12,6 +12,7 @@ import (
 	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
 	"github.com/EDDYCJY/go-gin-example/pkg/upload"
 	"github.com/boybird/hello/pkg/export"
+	"github.com/boybird/hello/middleware/jwt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -27,7 +28,7 @@ func InitRouter() *gin.Engine {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	apiv1 := r.Group("/api/v1")
-	apiv1.Use(JWT())
+	apiv1.Use(jwt.JWT())
 	{
 		// 获取标签列表
 		apiv1.GET("TAGS", v1.GetTags)
