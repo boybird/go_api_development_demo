@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/boybird/go_api_development_demo/pkg/setting"
+	"github.com/boybird/hello/pkg/setting"
 	"github.com/jinzhu/gorm"
 )
 
