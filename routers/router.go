@@ -11,7 +11,7 @@ import (
 
 	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
 	"github.com/EDDYCJY/go-gin-example/pkg/upload"
-	"github.com/boybird/hello/pkg/export"
+	"github.com/boybird/go_api_development_demo/pkg/export"
 	"github.com/gin-gonic/gin"
 )
 

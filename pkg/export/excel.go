@@ -1,6 +1,6 @@
 package export
 
-import "github.com/boybird/hello/pkg/setting"
+import "github.com/boybird/go_api_development_demo/pkg/setting"
 
 // EXT excel export extenstion
 const EXT = ".xlsx"

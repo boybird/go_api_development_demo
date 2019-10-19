@@ -8,10 +8,10 @@ import (
 	"path"
 	"strings"
 
-	"github.com/boybird/hello/pkg/file"
-	"github.com/boybird/hello/pkg/logging"
-	"github.com/boybird/hello/pkg/setting"
-	"github.com/boybird/hello/pkg/util"
+	"github.com/boybird/go_api_development_demo/pkg/file"
+	"github.com/boybird/go_api_development_demo/pkg/logging"
+	"github.com/boybird/go_api_development_demo/pkg/setting"
+	"github.com/boybird/go_api_development_demo/pkg/util"
 )
 
 // GetImageFullURL get image url

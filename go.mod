@@ -1,4 +1,4 @@
-module github.com/boybird/hello
+module github.com/boybird //boybird/go_api_development_demo
 
 go 1.13
 
