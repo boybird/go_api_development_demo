@@ -108,6 +108,7 @@ func AddTag(c *gin.Context) {
 	appG.Response(http.StatusOK, e.SUCCESS, nil)
 }
 
+// EditTagForm edit tag request
 type EditTagForm struct {
 	ID         int    `form:"id" valid:"Required;Min(1)"`
 	Name       string `form:"name" valid:"Required;MaxSize(100)"`
@@ -115,6 +116,7 @@ type EditTagForm struct {
 	State      int    `form:"state" valid:"Range(0,1)"`
 }
 
+// EditTag  Update article tag
 // @Summary Update article tag
 // @Produce  json
 // @Param id path int true "ID"
@@ -163,6 +165,7 @@ func EditTag(c *gin.Context) {
 	appG.Response(http.StatusOK, e.SUCCESS, nil)
 }
 
+// DeleteTag Delete article tag
 // @Summary Delete article tag
 // @Produce  json
 // @Param id path int true "ID"
