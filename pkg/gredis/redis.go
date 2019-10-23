@@ -61,6 +61,17 @@ func Set(key string, data interface{}, time int) error {
 
 }
 
+// Exists check a key
+func Exists(key string) bool {
+	conn := RedisConn.Get()
+	defer conn.Close()
+	exists, err := redis.Bool(conn.Do("exist", key))
+	if err != nil {
+		return false
+	}
+	return exists
+}
+
 // Get get a key
 func Get(key string) ([]byte, error) {
 	conn := RedisConn.Get()

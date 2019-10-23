@@ -13,7 +13,7 @@ import (
 	"github.com/boybird/hello/pkg/logging"
 	"github.com/boybird/hello/pkg/setting"
 	"github.com/boybird/hello/pkg/util"
-	"github.com/boybird/hello/service/tag_service"
+	"github.com/boybird/hello/service/tag"
 )
 
 // GetTags Get multiple article tags
@@ -32,7 +32,7 @@ func GetTags(c *gin.Context) {
 		state = com.StrTo(arg).MustInt()
 	}
 
-	tagService := tag_service.Tag{
+	tagService := tag.Tag{
 		Name:     name,
 		State:    state,
 		PageNum:  util.GetPage(c),
@@ -84,7 +84,7 @@ func AddTag(c *gin.Context) {
 		return
 	}
 
-	tagService := tag_service.Tag{
+	tagService := tag.Tag{
 		Name:      form.Name,
 		CreatedBy: form.CreatedBy,
 		State:     form.State,
@@ -138,7 +138,7 @@ func EditTag(c *gin.Context) {
 		return
 	}
 
-	tagService := tag_service.Tag{
+	tagService := tag.Tag{
 		ID:         form.ID,
 		Name:       form.Name,
 		ModifiedBy: form.ModifiedBy,
@@ -183,7 +183,7 @@ func DeleteTag(c *gin.Context) {
 		appG.Response(http.StatusBadRequest, e.INVALID_PARAMS, nil)
 	}
 
-	tagService := tag_service.Tag{ID: id}
+	tagService := tag.Tag{ID: id}
 	exists, err := tagService.ExistByID()
 	if err != nil {
 		appG.Response(http.StatusInternalServerError, e.ERROR_EXIST_TAG_FAIL, nil)
@@ -219,7 +219,7 @@ func ExportTag(c *gin.Context) {
 		state = com.StrTo(arg).MustInt()
 	}
 
-	tagService := tag_service.Tag{
+	tagService := tag.Tag{
 		Name:  name,
 		State: state,
 	}
@@ -253,7 +253,7 @@ func ImportTag(c *gin.Context) {
 		return
 	}
 
-	tagService := tag_service.Tag{}
+	tagService := tag.Tag{}
 	err = tagService.Import(file)
 	if err != nil {
 		logging.Warn(err)

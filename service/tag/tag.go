@@ -1,4 +1,4 @@
-package tag_service
+package tag
 
 import (
 	"encoding/json"
@@ -7,14 +7,13 @@ import (
 	"time"
 
 	"github.com/360EntSecGroup-Skylar/excelize"
-	"github.com/boybird/hello/models"
-	"github.com/tealeg/xlsx"
-
-	"github.com/EDDYCJY/go-gin-example/pkg/export"
-	"github.com/EDDYCJY/go-gin-example/pkg/file"
-	"github.com/EDDYCJY/go-gin-example/pkg/gredis"
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
 	"github.com/EDDYCJY/go-gin-example/service/cache_service"
+	"github.com/boybird/hello/models"
+	"github.com/boybird/hello/pkg/export"
+	"github.com/boybird/hello/pkg/file"
+	"github.com/boybird/hello/pkg/gredis"
+	"github.com/boybird/hello/pkg/logging"
+	"github.com/tealeg/xlsx"
 )
 
 type Tag struct {
@@ -51,14 +50,17 @@ func (t *Tag) Edit() error {
 	return models.EditTag(t.ID, data)
 }
 
+// Delete delete a tag
 func (t *Tag) Delete() error {
 	return models.DeleteTag(t.ID)
 }
 
+// Count get count of tags
 func (t *Tag) Count() (int, error) {
 	return models.GetTagTotal(t.getMaps())
 }
 
+// GetAll get all tags
 func (t *Tag) GetAll() ([]models.Tag, error) {
 	var (
 		tags, cacheTags []models.Tag
@@ -90,6 +92,7 @@ func (t *Tag) GetAll() ([]models.Tag, error) {
 	return tags, nil
 }
 
+// Export export tag to excel
 func (t *Tag) Export() (string, error) {
 	tags, err := t.GetAll()
 	if err != nil {
