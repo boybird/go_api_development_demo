@@ -2,7 +2,7 @@ package export
 
 import "github.com/boybird/hello/pkg/setting"
 
-// EXT excel export extenstion
+// EXT Excel export as excel 2007
 const EXT = ".xlsx"
 
 // GetExcelFullURL get the full access path of the Excel file

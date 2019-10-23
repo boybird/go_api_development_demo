@@ -2,8 +2,7 @@ package app
 
 import (
 	"github.com/astaxie/beego/validation"
-
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
+	"github.com/boybird/hello/pkg/logging"
 )
 
 // MarkErrors logs error logs

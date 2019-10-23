@@ -4,9 +4,8 @@ import (
 	"net/http"
 
 	"github.com/astaxie/beego/validation"
+	"github.com/boybird/hello/pkg/e"
 	"github.com/gin-gonic/gin"
-
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
 )
 
 // BindAndValid binds and validates data
