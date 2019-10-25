@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	// 注册 swager 文档
-	_ "github.com/EDDYCJY/go-gin-example/docs"
-	v1 "github.com/EDDYCJY/go-gin-example/routers/api/v1"
+	_ "github.com/boybird/hello/docs"
+	v1 "github.com/boybird/hello/routers/api/v1"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
-	"github.com/EDDYCJY/go-gin-example/pkg/upload"
+	"github.com/boybird/hello/pkg/qrcode"
+	"github.com/boybird/hello/pkg/upload"
 	"github.com/boybird/hello/middleware/jwt"
 	"github.com/boybird/hello/pkg/export"
 	"github.com/gin-gonic/gin"

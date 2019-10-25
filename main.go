@@ -7,7 +7,7 @@ import (
 
 	"github.com/boybird/hello/pkg/gredis"
 	"github.com/boybird/hello/pkg/logging"
-	"github.com/boybird/hello/pkg/models"
+	"github.com/boybird/hello/models"
 	"github.com/boybird/hello/pkg/setting"
 	"github.com/boybird/hello/pkg/util"
 	"github.com/boybird/hello/routers"

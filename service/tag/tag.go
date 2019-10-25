@@ -7,12 +7,12 @@ import (
 	"time"
 
 	"github.com/360EntSecGroup-Skylar/excelize"
-	"github.com/EDDYCJY/go-gin-example/service/cache_service"
 	"github.com/boybird/hello/models"
 	"github.com/boybird/hello/pkg/export"
 	"github.com/boybird/hello/pkg/file"
 	"github.com/boybird/hello/pkg/gredis"
 	"github.com/boybird/hello/pkg/logging"
+	"github.com/boybird/hello/service/cache"
 	"github.com/tealeg/xlsx"
 )
 
@@ -66,7 +66,7 @@ func (t *Tag) GetAll() ([]models.Tag, error) {
 		tags, cacheTags []models.Tag
 	)
 
-	cache := cache_service.Tag{
+	cache := cache.Tag{
 		State: t.State,
 
 		PageNum:  t.PageNum,
